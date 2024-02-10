@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -15,3 +16,7 @@ use App\Http\Controllers\PageController;
 */
 
 Route::get('/', [ PageController::class, 'index' ]);
+Route::get('/login', [ AuthController::class, 'login' ])->name('login-form');
+Route::post('/login', [ AuthController::class, 'loginHandle' ])->name('login-handle');
+Route::get('/register', [ AuthController::class, 'register' ])->name('register-form');
+Route::post('/register', [ AuthController::class, 'registerHandle' ])->name('register-handle');
