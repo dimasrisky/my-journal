@@ -39,5 +39,7 @@
     @yield('content')
 
     @livewireScripts
+
+<script src="{{ asset('js/article-site.js') }}"></script>
 </body>
 </html>

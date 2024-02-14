@@ -15,7 +15,11 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', [ PageController::class, 'index' ]);
+// Page
+Route::get('/', [ PageController::class, 'index' ])->name('home');
+Route::get('/article', [ PageController::class, 'article' ])->name('article');
+
+// Authentication Page
 Route::get('/login', [ AuthController::class, 'login' ])->name('login-form');
 Route::post('/login', [ AuthController::class, 'loginHandle' ])->name('login-handle');
 Route::get('/register', [ AuthController::class, 'register' ])->name('register-form');
