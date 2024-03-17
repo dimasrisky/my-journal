@@ -17,6 +17,11 @@ class Article extends Model
         'image'
     ];
 
+    protected $hidden = [
+        'user_id',
+        'category_id'
+    ];
+
     public function category(){
         return $this->belongsTo(Category::class);
     }
